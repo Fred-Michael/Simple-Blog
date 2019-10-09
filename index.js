@@ -88,7 +88,7 @@ $(document).ready(function() {
                url: "http://127.0.0.1:3000/post",
                method: "GET",
                error: function(err) {
-                  alert("Error: " + err);
+                  alert("Error: There seems to be a trouble refreshing the contents");
                },
                success: function(data){
                   data.forEach(article => {
@@ -120,7 +120,7 @@ $(document).ready(function() {
                url: "http://127.0.0.1:3000/post",
                method: "GET",
                error: function(err) {
-                  alert("Error: " + err);
+                  alert("Error: Cannot get latest content from the browser.");
                },
                success: function(data){
                   data.forEach(article => {
