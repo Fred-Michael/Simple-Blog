@@ -4,9 +4,102 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Deca-Blog</title>
+   <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="style.css">
+   <!-- Get the cdn link for jquery to replace the below -->
+	<script src="Bootstrap/jquery.js"></script>
+	<script src="index.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+   <title>Deca-Blog| Prime of its time</title>
 </head>
 <body>
+   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<a href="index.html" class="navbar-brand">
+			<h3 class="m-2">DECA-BLOG</h3>
+		</a>
+		<button class="navbar-toggler" data-toggle="collapse" data-target="#forms">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div id="forms" class="collapse navbar-collapse mr-3">
+			<form class="form-inline ml-auto">
+				<button type="button" id="delete" class="btn btn-danger mr-sm-2 mr-2" tabindex="-1" role="button" data-toggle="modal" data-target="#del_modal_button">Delete</button>
+				<button type="button" id="create" class="btn btn-success" tabindex="-1" role="button" data-toggle="modal" data-target="#new">New Article</button>
+				<button type="button" class="btn btn-info mr-sm-2 mr-2 ml-sm-2 ml-2" data-toggle="modal" data-target="#login_modal_pop">Login</button>
+				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#reg_modal_pop">Register</button>
+			</form>
+		</div>
+   </nav>
    
+   <!-- Register modal pop-up -->
+	<div class="modal fade" id="reg_modal_pop" role="dialog" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title lead">Register</h4>
+					<button class="close" type="button" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="user">Name</label>
+							<input type="text" class="form-control" id="name" placeholder="Enter Name">
+						</div>
+						<div class="form-group">
+							<label for="pwd">Username</label>
+							<input type="text" class="form-control" id="username" placeholder="Enter username">
+						</div>
+						<div class="form-group">
+							<label for="pwd">Password</label>
+							<input type="password" class="form-control" id="new_pwd" placeholder="Enter password">
+						</div>
+						<div class="form-group">
+							<label for="pwd">Email</label>
+							<input type="email" class="form-control" id="new_email" placeholder="Enter Email">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<buttton type="button" class="btn btn-success" id="reg">Register</buttton>
+					<buttton class="btn btn-danger" data-dismiss="modal">Cancel</buttton>
+				</div>
+			</div>
+		</div>
+   </div>
+   
+	<!-- Login modal pop-up -->
+	<div class="modal fade" id="login_modal_pop" role="dialog" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title lead">Log in</h4>
+					<button class="close" type="button" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="user">Username</label>
+							<input type="text" class="form-control" id="user" placeholder="Enter username">
+						</div>
+						<div class="form-group">
+							<label for="pwd">Password</label>
+							<input type="password" class="form-control" id="pwd" placeholder="Enter password">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<buttton class="btn btn-success" id="login">Login</buttton>
+					<buttton class="btn btn-danger" data-dismiss="modal">Cancel</buttton>
+				</div>
+			</div>
+		</div>
+	</div>   
 </body>
 </html>
