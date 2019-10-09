@@ -5,3 +5,28 @@ p.line {
 * {
    font-family: 'Righteous', cursive;
 }
+#newsletter {
+   background-color: darkgrey;
+   padding: 9%
+}
+a.d-inline-block {
+   color: #000;
+}
+a.d-inline-block#fbk {
+   color: #3b5998;
+}
+a.d-inline-block#twt {
+   color: #1DA1F2;
+}
+a.d-inline-block#yt {
+   color: #c4302b;
+}
+a.d-inline-block#inst {
+   color: #8a3ab9;
+}
+a.d-inline-block#link {
+   color: #0e76a8;
+}
+#copy {
+   background-color: #000;
+}
