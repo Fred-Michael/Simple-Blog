@@ -41,14 +41,21 @@ $(document).ready(function() {
             alert("Error: Cannot complete login request");
          },
          success: function(data) {
-            let name = $("#user").val(), pass = $("#pwd").val();
+            let name = $("#user").val(), pass = $("#pwd").val(), entry = $("#nav_login");
             for(let i=0; i<data.length; i++) {
                if(data[i]["username"] === "Admin" && data[i]["password"] === "admin") {
                   alert("Welcome Admin!");
+                  //Testing the localstorage fxn
+                  localStorage.setItem("Admin", "admin");
+                  entry.val("Logout");
+                  $("#create, #delete").each(function() {
+                     $(this).removeAttr("disabled");
+                  });
                } else if(data[i]["username"] === name && data[i]["password"] === pass) {
                   alert("Welcome " + name + " !");
+                  entry.val("Logout");
                } else {
-                  alert("Invalid username and/or password");
+                  alert("Invalid username and/or password. Register First!");
                }
             }
             $("#login_modal_pop").modal("hide");
