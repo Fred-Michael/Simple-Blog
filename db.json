@@ -1,0 +1,24 @@
+{
+   "users": [
+     {
+       "id": 1,
+       "name": "Admin",
+       "username": "Admin",
+       "password": "admin",
+       "email": "admin@example.com"
+     }
+   ],
+   "post": [
+     {
+       "title": "oyinbo",
+       "body": "Ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! v Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! v Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique fugit possimus ratione voluptatibus eos. Minima amet repellendus aliquam aspernatur facere nemo quod, reprehenderit cum, magnam iure omnis obcaecati mollitia eos!",
+       "id": 1
+     }
+   ],
+   "comments": [
+     {
+       "id": 1,
+       "body": "aoiha;hdoihieegae"
+     }
+   ]
+ }
