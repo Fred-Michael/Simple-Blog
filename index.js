@@ -41,34 +41,28 @@ $(document).ready(function() {
             alert("Error: Cannot complete login request");
          },
          success: function(data) {
-            let name = $("#user").val(), pass = $("#pwd").val(), entry = $("#nav_login");
-            for(let i=0; i<data.length; i++) {
-               if(data[i]["username"] === "Admin" && data[i]["password"] === "admin") {
-                  alert("Welcome Admin!");
-                  //Testing the localstorage fxn
-                  localStorage.setItem("Admin", "admin");
-                  entry.val("Logout");
-                  $("#create, #delete").each(function() {
-                     $(this).removeAttr("disabled");
-                  });
-               } else if(data[i]["username"] === name && data[i]["password"] === pass) {
-                  alert("Welcome " + name + " !");
-                  entry.val("Logout");
-               } else {
-                  alert("Invalid username and/or password. Register First!");
+            let name = $("#user").val(), pass = $("#pwd").val();
+            let i=0;
+            for(; i<data.length; i++) {
+               if(data[i]["username"] === name && data[i]["password"] === pass) {
+                  if (name === "Admin" && pass === "admin") {
+                     alert("Welcome " + name + "!");
+                     (window.location.href = "index2.html");
+                  } else {
+                     alert("Welcome " + name + "!");
+                  }
                }
             }
             $("#login_modal_pop").modal("hide");
             $("#user, #pwd").each(function() {
                $(this).val("");
             });
-            // get localstorage working so as to implement the below code well and uncomment them and affix them appropriately (to the admin login section)
-            //instead of 'disabled', use hide/show for admin
-            // $("#create, #delete").each(function() {
-            //    $(this).removeAttr("disabled");
-            // });
          }
       });
+   });
+   $("#logout_btn").click(function() {
+      console.log("Logout successful");
+      window.location = "index.html";
    });
    $("#del").click(function() {
       //ajax call to delete a blog article from the server
@@ -154,6 +148,10 @@ function shorten(body) {
    words += "...";
    return words;
 }
+
+// function changePage(page) {
+//    setTimeout((location.href = page), 500);
+// }
 
 let urlParams = new URLSearchParams(window.location.search);
 let id = urlParams.get("id");
