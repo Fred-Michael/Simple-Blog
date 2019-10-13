@@ -45,9 +45,10 @@ $(document).ready(function() {
             let i=0;
             for(; i<data.length; i++) {
                if(data[i]["username"] === name && data[i]["password"] === pass) {
+                  localStorage.setItem("user", name);
                   if (name === "Admin" && pass === "admin") {
                      alert("Welcome " + name + "!");
-                     (window.location.href = "index2.html");
+                     window.location.href = "index2.html";
                   } else {
                      alert("Welcome " + name + "!");
                   }
@@ -61,7 +62,8 @@ $(document).ready(function() {
       });
    });
    $("#logout_btn").click(function() {
-      console.log("Logout successful");
+      //code to log out of the blog
+      localStorage.removeItem("user");
       window.location = "index.html";
    });
    $("#del").click(function() {
@@ -105,6 +107,7 @@ $(document).ready(function() {
       // ajax call to post newly created blog article to the server
       let head = $("#title").val(), body = $("#body").val();
       var data = {title: head, body: body};
+      //add article comments to the above data to be sent
       $.ajax({
          url: "http://127.0.0.1:3000/post",
          method: "POST",
@@ -149,9 +152,7 @@ function shorten(body) {
    return words;
 }
 
-// function changePage(page) {
-//    setTimeout((location.href = page), 500);
-// }
-
 let urlParams = new URLSearchParams(window.location.search);
 let id = urlParams.get("id");
+
+// let commentings = [];
