@@ -1,7 +1,7 @@
 $(document).ready(function() {
    var stored = localStorage.getItem("user");
    let addr = document.URL, id = addr[addr.length - 1];
-   //ajax call to load article and comments
+   //ajax call to load article and comments on page load
    $.ajax({
       url: "http://127.0.0.1:3000/post/"+id,
       method: "GET",
@@ -25,10 +25,6 @@ $(document).ready(function() {
                   const feedback = `<p class="mb-2">${comment.body} - Anonymous</p>`;
                   $("#comment_area").prepend(feedback);
                });
-               // data.forEach(comment => {
-               //    const feedback = `<p class="mb-2">${comment.body}</p>`;
-               //    $("#comment_area").prepend(feedback);
-               // });
             }
          });
       }
@@ -51,7 +47,7 @@ $(document).ready(function() {
          },
          success: function(data){
             $("#textarea").hide();
-            $("#comment_text").val("")
+            $("#comment_text").val("");
             $.ajax({
                url: "http://127.0.0.1:3000/comments?postId="+id,
                method: "GET",
