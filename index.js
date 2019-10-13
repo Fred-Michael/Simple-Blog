@@ -107,7 +107,6 @@ $(document).ready(function() {
       // ajax call to post newly created blog article to the server
       let head = $("#title").val(), body = $("#body").val();
       var data = {title: head, body: body};
-      //add article comments to the above data to be sent
       $.ajax({
          url: "http://127.0.0.1:3000/post",
          method: "POST",
@@ -154,5 +153,3 @@ function shorten(body) {
 
 let urlParams = new URLSearchParams(window.location.search);
 let id = urlParams.get("id");
-
-// let commentings = [];
