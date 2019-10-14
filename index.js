@@ -79,14 +79,30 @@ $(document).ready(function() {
             var posts = data;
             for(let i=0; i<posts.length; i++){
                if(del_article === posts[i].title) {
+                  var target = `${data[i].id}`
                   $.ajax({
-                     url: `http://127.0.0.1:3000/post/${data[i].id}`,
+                     url: `http://127.0.0.1:3000/post/`+target,
                      method: "DELETE"
                   });
                }
             }
+            $.ajax({
+               url: `http://127.0.0.1:3000/comments/?postId=`+target,
+               method: "GET",
+               error: function(err) {
+                  alert("Error: Cannot complete delete request");
+               },
+               success: function(data) {
+                  for (let j = 0; j < data.length; j++) {
+                     $.ajax({
+                        url: `http://127.0.0.1:3000/comments/`+data[j].id,
+                        method: "DELETE"
+                     });
+                  }
+               }
+            });
             alert("Blog post deleted successfully");
-            $("#del_modal_button").modal("hide");
+            $("#del_modal_pop").modal("hide");
             $.ajax({
                url: "http://127.0.0.1:3000/post",
                method: "GET",
@@ -137,6 +153,55 @@ $(document).ready(function() {
             }); 
          }
       });
+   });
+   $("#update_article").click(function() {
+      //ajax call to update a blog post
+      let title = $("#article_title").val(), body = $("#update_body").val();
+      let updates = {title: title, body: body};
+      $.ajax({
+         url: "http://127.0.0.1:3000/post",
+         method: "GET",
+         error: function(err) {
+            alert("Error: Cannot fetch posts. Try again");
+         },
+         success: function(data){
+            for (let i = 0; i < data.length; i++) {
+               if (data[i].title === title) {
+                  var data_id = data[i].id;
+               }
+            }
+            $.ajax({
+               url: "http://127.0.0.1:3000/post/"+data_id,
+               method: "PUT",
+               contentType: "application/json",
+               data: JSON.stringify(updates),
+               dataType: "json",
+               error: function(err) {
+                  alert("Error: Cannot modify blog post. Try again");
+               },
+               success: function(data){
+                  alert("Article modified successfully");
+                  $("#update_modal_pop").modal("hide");
+                  $.ajax({
+                     url: "http://127.0.0.1:3000/post",
+                     method: "GET",
+                     error: function(err) {
+                        alert("Error: Cannot get latest content from the browser.");
+                     },
+                     success: function(data){
+                        data.forEach(article => {
+                           const content = `<div class="card mb-3"><div class="card-body"><h3 class="card-title">${article.title}</h3><p class="card-text">${shorten(article.body)}</p><a href="article.html?id=${article.id}" class="card-link text-muted small text-italics mr-5">read more</a></div></div>`;
+                           $('#show_article').prepend(content);
+                        });
+                        $("#article_title, #update_body").each(function() {
+                           $(this).val("");
+                        });
+                     }
+                  });
+               }
+            })
+         }
+      })
    });
 });
 
