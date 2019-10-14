@@ -26,51 +26,43 @@
 
 		<div id="forms" class="collapse navbar-collapse mr-3">
 			<form class="form-inline ml-auto">
-				<button type="button" id="delete" class="btn btn-danger mr-sm-2 mr-2" tabindex="-1" role="button" data-toggle="modal" data-target="#del_modal_button">Delete</button>
-				<button type="button" id="create" class="btn btn-success" tabindex="-1" role="button" data-toggle="modal" data-target="#new">New Article</button>
-				<button type="button" class="btn btn-info mr-sm-2 mr-2 ml-sm-2 ml-2" data-toggle="modal" data-target="#login_modal_pop" id="logout_btn">Logout</button>
+            <button type="button" id="update" class="btn btn-primary mr-sm-2 mr-2" role="button" data-toggle="modal" data-target="#update_modal_pop">Update</button>
+				<button type="button" id="delete" class="btn btn-danger mr-sm-2 mr-2" role="button" data-toggle="modal" data-target="#del_modal_pop">Delete</button>
+				<button type="button" id="create" class="btn btn-warning" role="button" data-toggle="modal" data-target="#new">New Article</button>
+				<button type="button" id="logout_btn" class="btn btn-info mr-sm-2 mr-2 ml-sm-2 ml-2">Logout</button>
 				<!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#reg_modal_pop">Register</button> -->
 			</form>
 		</div>
    </nav>
-   
-   <!-- Register modal pop-up
-	<div class="modal fade" id="reg_modal_pop" role="dialog" tabindex="-1">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title lead">Register</h4>
-					<button class="close" type="button" data-dismiss="modal">
-						<span>&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form>
-						<div class="form-group">
-							<label for="user">Name</label>
-							<input type="text" class="form-control" id="name" placeholder="Enter Name">
-						</div>
-						<div class="form-group">
-							<label for="pwd">Username</label>
-							<input type="text" class="form-control" id="username" placeholder="Enter username">
-						</div>
-						<div class="form-group">
-							<label for="pwd">Password</label>
-							<input type="password" class="form-control" id="new_pwd" placeholder="Enter password">
-						</div>
-						<div class="form-group">
-							<label for="pwd">Email</label>
-							<input type="email" class="form-control" id="new_email" placeholder="Enter Email">
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<buttton type="button" class="btn btn-success" id="reg">Register</buttton>
-					<buttton class="btn btn-danger" data-dismiss="modal">Cancel</buttton>
-				</div>
-			</div>
-		</div>
-   </div> -->
+
+   <!-- update article modal pop-up -->
+	<div class="modal fade" id="update_modal_pop" role="dialog" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h4 class="modal-title lead">Update blog article</h4>
+               <button class="close" type="button" data-dismiss="modal">
+                  <span>&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <form>
+                  <div class="form-group">
+                     <label for="user">Title</label>
+                     <input type="text" class="form-control" id="article_title" placeholder="title">
+                  </div>
+                  <div class="form-group">
+                     <label for="pwd">Update content</label>
+                     <textarea cols="4" rows="10" class="form-control" id="update_body" placeholder="Enter article body update here"></textarea>
+                  </div>
+               </form>
+            </div>
+            <div class="modal-footer">
+               <buttton class="btn btn-success" id="update_article">Update</buttton>
+            </div>
+         </div>
+      </div>
+   </div>
 
 	<!-- create article modal pop-up -->
 	<div class="modal fade" id="new" role="dialog" tabindex="-1">
@@ -102,7 +94,7 @@
    </div>
    
 	<!-- delete blog modal pop-up -->
-	<div class="modal fade" id="del_modal_button" role="dialog" tabindex="-1">
+	<div class="modal fade" id="del_modal_pop" role="dialog" tabindex="-1">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
