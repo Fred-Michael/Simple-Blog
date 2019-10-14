@@ -6,7 +6,7 @@ $(document).ready(function() {
       url: "http://127.0.0.1:3000/post/"+id,
       method: "GET",
       error: function(err) {
-         console.log("Error: Could not load blog content");
+         alert("Error: Could not load blog content");
       },
       success: function(data_article){
          $(".card-title").html(`${data_article.title}`);
@@ -15,7 +15,7 @@ $(document).ready(function() {
             url: "http://127.0.0.1:3000/comments?postId="+id,
             method: "GET",
             error: function(err) {
-               console.log("Error: Could not load comments");
+               alert("Error: Could not load comments");
             },
             success: function(data){
                stored ? data.forEach(comment => {
@@ -43,7 +43,7 @@ $(document).ready(function() {
          data: JSON.stringify(data),
          dataType: "json",
          error: function(err) {
-            console.log("Cannot post comments at the moment");
+            alert("Cannot post comments at the moment");
          },
          success: function(data){
             $("#textarea").hide();
@@ -52,7 +52,7 @@ $(document).ready(function() {
                url: "http://127.0.0.1:3000/comments?postId="+id,
                method: "GET",
                error: function(err) {
-                  console.log("Cannot retrieve comments from the database. Try again");
+                  alert("Cannot retrieve comments from the database. Try again");
                },
                success: function(data){
                   stored ? data.forEach(comment => {
