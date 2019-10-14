@@ -90,7 +90,7 @@ $(document).ready(function() {
                url: `http://127.0.0.1:3000/comments/?postId=`+target,
                method: "GET",
                error: function(err) {
-                  alert("Error: Cannot complete delete request");
+                  alert("Error: Cannot complete fetch request");
                },
                success: function(data) {
                   for (let j = 0; j < data.length; j++) {
@@ -180,7 +180,7 @@ $(document).ready(function() {
                   alert("Error: Cannot modify blog post. Try again");
                },
                success: function(data){
-                  alert("Article modified successfully");
+                  alert("Article has been updated");
                   $("#update_modal_pop").modal("hide");
                   $.ajax({
                      url: "http://127.0.0.1:3000/post",
