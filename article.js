@@ -26,13 +26,6 @@ $(document).ready(function() {
                   const feedback = `<p class="mb-2">${comment.body} - Anonymous</p>`;
                   $("#comment_area").prepend(feedback);
                });
-               // boss ? data.forEach(comment => {
-               //    const feedback = `<p class="mb-2">${comment.body} - ${boss}</p>`;
-               //    $("#comment_area").prepend(feedback);
-               // }) : data.forEach(comment => {
-               //    const feedback = `<p class="mb-2">${comment.body} - Anonymous</p>`;
-               //    $("#comment_area").prepend(feedback);
-               // });
             }
          });
       }

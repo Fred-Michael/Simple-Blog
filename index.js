@@ -34,7 +34,7 @@ $(document).ready(function() {
    });
    $("#login").click(function() {
       $.ajax({
-         //ajax call for user login
+         //ajax call for users/Admin login
          url: "http://127.0.0.1:3000/users",
          method: "GET",
          error: function(err) {
@@ -45,7 +45,6 @@ $(document).ready(function() {
             let i=0;
             for(; i<data.length; i++) {
                if(data[i]["username"] === name && data[i]["password"] === pass) {
-                  // localStorage.setItem("user", name);
                   if (name === "Admin" && pass === "admin") {
                      localStorage.setItem("Owner", name);
                      alert("Welcome " + name + "!");
@@ -65,12 +64,12 @@ $(document).ready(function() {
       });
    });
    $("#user_logout").click(function() {
-      //code to log out user from the blog
+      //code to log user out from the blog
       localStorage.removeItem("user");
       window.location = "index.html";
    });
    $("#admin_logout").click(function() {
-      //code to log out Admin from the blog
+      //code to log Admin out from the blog
       localStorage.removeItem("Owner");
       window.location = "index.html";
    });
@@ -214,7 +213,10 @@ $(document).ready(function() {
 });
 
 
-//functions & codes for use in the code
+//functions & codes for use in jQuery
+
+
+//code to shorten the amount of words to display on retrieving posts from the db
 function shorten(body) {
    let words = '';
    for(let i = 0; i <= 200; i++) {
@@ -224,5 +226,7 @@ function shorten(body) {
    return words;
 }
 
+//code used to create a search on the address bar of the browser pointing to the id provided
+//this is so as to load a specific blog onto a page
 let urlParams = new URLSearchParams(window.location.search);
 let id = urlParams.get("id");
