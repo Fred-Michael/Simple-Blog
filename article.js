@@ -1,5 +1,6 @@
 $(document).ready(function() {
    var stored = localStorage.getItem("user");
+   var boss = localStorage.getItem("Owner");
    let addr = document.URL, id = addr[addr.length - 1];
    //ajax call to load article and comments on page load
    $.ajax({
@@ -18,13 +19,20 @@ $(document).ready(function() {
                alert("Error: Could not load comments");
             },
             success: function(data){
-               stored ? data.forEach(comment => {
-                  const feedback = `<p class="mb-2">${comment.body} - ${stored}</p>`;
+               stored || boss ? data.forEach(comment => {
+                  const feedback = `<p class="mb-2">${comment.body} - ${stored || boss}</p>`;
                   $("#comment_area").prepend(feedback);
                }) : data.forEach(comment => {
                   const feedback = `<p class="mb-2">${comment.body} - Anonymous</p>`;
                   $("#comment_area").prepend(feedback);
                });
+               // boss ? data.forEach(comment => {
+               //    const feedback = `<p class="mb-2">${comment.body} - ${boss}</p>`;
+               //    $("#comment_area").prepend(feedback);
+               // }) : data.forEach(comment => {
+               //    const feedback = `<p class="mb-2">${comment.body} - Anonymous</p>`;
+               //    $("#comment_area").prepend(feedback);
+               // });
             }
          });
       }
@@ -55,8 +63,8 @@ $(document).ready(function() {
                   alert("Cannot retrieve comments from the database. Try again");
                },
                success: function(data){
-                  stored ? data.forEach(comment => {
-                     const feedback = `<p class="mb-2">${comment.body} - ${stored}</p>`;
+                  stored || boss ? data.forEach(comment => {
+                     const feedback = `<p class="mb-2">${comment.body} - ${stored || boss}</p>`;
                      $("#comment_area").prepend(feedback);
                   }) : data.forEach(comment => {
                      const feedback = `<p class="mb-2">${comment.body} - Anonymous</p>`;

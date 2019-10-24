@@ -49,11 +49,11 @@ $(document).ready(function() {
                   if (name === "Admin" && pass === "admin") {
                      localStorage.setItem("Owner", name);
                      alert("Welcome " + name + "!");
-                     window.location.href = "index2.html";
+                     window.location.href = "adminindex.html";
                   } else {
                      localStorage.setItem("user", name);
                      alert("Welcome " + name + "!");
-                     // add a redirect page for regular user login here
+                     window.location.href = "userindex.html";
                   }
                }
             }
@@ -64,17 +64,14 @@ $(document).ready(function() {
          }
       });
    });
-   $("#logout_btn").click(function() {
-      //code to log out of the blog
-      //try the following:
-      // if (localStorage.getItem("Owner")) {
-      //    localStorage.removeItem("Owner")
-      //    window.location = "index.html";
-      // } else {
-      //    localStorage.removeItem("user");
-      //    window.location = "index.html";
-      // }
+   $("#user_logout").click(function() {
+      //code to log out user from the blog
       localStorage.removeItem("user");
+      window.location = "index.html";
+   });
+   $("#admin_logout").click(function() {
+      //code to log out Admin from the blog
+      localStorage.removeItem("Owner");
       window.location = "index.html";
    });
    $("#del").click(function() {
